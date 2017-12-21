@@ -1,0 +1,7 @@
+<h2> 유저 목록 </h2>
+
+<% @user.each do |user|%>
+  <p><%=user.name %></p>
+  <p><%=user.email %></p>
+  <hr />
+<%end%>

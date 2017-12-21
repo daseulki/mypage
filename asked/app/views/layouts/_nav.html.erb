@@ -1,0 +1,22 @@
+<nav>
+  <ul class="nav nav-pills float-right">
+    <li class="nav-item">
+      <a class="nav-link active" href="/"> 홈으로 <span class="sr-only">(current)</span></a>
+    </li>
+    <%unless current_user.nil?%>
+      <li class="nav-item">
+        <a class= "nav-link"> <%= current_user.name%></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/user/logout">로그아웃</a>
+      </li>
+    <%else%>
+      <li class="nav-item">
+        <a class="nav-link" href="/user/new">회원가입</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/user/login">로그인</a>
+      </li>
+    <%end%>
+  </ul>
+</nav>

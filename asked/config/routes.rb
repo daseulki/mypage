@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get 'home/new'
-
-  get 'home/create'
-
   get 'home/show'
 
   get 'home/cute'
 
   get 'home/postnew'
-
-  get 'home/postcreate'
+  post 'home/postcreate'
 
   get 'home/postall'
 
@@ -25,6 +20,13 @@ Rails.application.routes.draw do
 
   get 'home/destroy'
 
+  get 'user/index'
+  get 'user/new'
+  post'user/create'
+
+  get 'user/login'
+  post 'user/login_process'
+  get 'user/logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

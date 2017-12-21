@@ -1,46 +1,22 @@
-
-  <body style="font-family: 'Hanna',serif" >
-    <div class="container mt-3">
-        <header class="header clearfix">
-          <nav>
-            <ul class="nav nav-pills float-right">
-              <li class="nav-item">
-                <a class="nav-link active" href="/"> 홈으로 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/home/new">회원가입</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">로그인</a>
-              </li>
-            </ul>
-          </nav>
-          <h3 class="text-muted">김미현 생일축하 홈페이지</h3>
-          <hr>
-        </header>
-    </div>
-
-    <table class = "table">
-      <thead>
-        <tr>
-          <th scope="col"> 글쓴이</th>
-          <th scope="col"> 제목</th>
-          <th scope="col"> 작성일자</th>
-
-        </tr>
-      </thead>
-      <% @post.each do |post| %>
-      <tbody>
-        <tr>
-          <td> <%= post.name%> </td>
-          <td><a href="/home/postshow/<%=post.id%>"> <%= post.title%></a> </td>
-          <td> <%= post.created_at %> </td>
-        </tr>
-      </tbody>
-      <%end%>
-    </table>
-    <hr />
-    <h4><a href="/home/postnew">글 쓰러 가기</a></h4>
-
-
-  </body>
+<body >
+  <table class = "table">
+    <thead>
+      <tr>
+        <th scope="col"> 글쓴이</th>
+        <th scope="col" > 제목</th>
+        <th scope="col"> 작성일자</th>
+      </tr>
+    </thead>
+    <% @post.each do |post| %>
+    <tbody>
+      <tr>
+        <td> <%= post.name%> </td>
+        <td><a href="/home/postshow/<%=post.id%>"> <%= post.title%></a> </td>
+        <td> <%= post.created_at %> </td>
+      </tr>
+    </tbody>
+    <%end%>
+  </table>
+  <hr />
+  <h4><a href="/home/postnew">글 쓰러 가기</a></h4>
+</body>

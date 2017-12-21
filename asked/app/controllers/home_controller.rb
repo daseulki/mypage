@@ -1,13 +1,7 @@
 class HomeController < ApplicationController
   def index
   end
-#회원가입
-  def new
 
-  end
-
-  def create
-  end
 
   #게시판
   def postall
@@ -15,6 +9,7 @@ class HomeController < ApplicationController
   end
 #ㄱㅔ시글 쓰기
   def postnew
+
   end
 
   def postcreate
