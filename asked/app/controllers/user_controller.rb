@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   def index
-    @user = User.all
+    @user = User.all.reverse
   end
 
   def new
@@ -39,6 +39,7 @@ class UserController < ApplicationController
 
     #다맞으면 로그인 시켜야지
       else
+        session[:user_id] = @user.id
         flash[:notice] = "   #{@user.name} 환영환영!"
         redirect_to '/'
 

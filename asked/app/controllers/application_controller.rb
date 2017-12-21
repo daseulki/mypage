@@ -13,6 +13,14 @@ class ApplicationController < ActionController::Base
       @user = User.find(session[:user_id])
     end
   end
-  
+
+    def authorize
+      if current_user.nil?
+        flash[:alert] = "로그인 해야 글쓸 수 있어"
+        redirect_to '/user/login'
+
+      end
+    end
+
   helper_method :current_user
 end

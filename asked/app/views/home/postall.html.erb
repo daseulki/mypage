@@ -2,16 +2,16 @@
   <table class = "table">
     <thead>
       <tr>
-        <th scope="col"> 글쓴이</th>
         <th scope="col" > 제목</th>
+        <th scope="col"> 글쓴이</th>
         <th scope="col"> 작성일자</th>
       </tr>
     </thead>
     <% @post.each do |post| %>
     <tbody>
       <tr>
-        <td> <%= post.name%> </td>
         <td><a href="/home/postshow/<%=post.id%>"> <%= post.title%></a> </td>
+        <td> <%= post.user.name %> </td>
         <td> <%= post.created_at %> </td>
       </tr>
     </tbody>

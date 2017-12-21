@@ -1,22 +1,26 @@
 class HomeController < ApplicationController
+  before_action :authorize, only: [:postall , :postnew, :postshow]
+
   def index
   end
 
 
   #게시판
   def postall
-    @post = Post.all
+        @post = Post.all
   end
-#ㄱㅔ시글 쓰기
+  #ㄱㅔ시글 쓰기
   def postnew
 
   end
 
   def postcreate
     post = Post.new
-    post.name = params[:name]
+
+    post.user_id = params[:userid]
     post.title = params[:title]
     post.content = params[:content]
+
     post.save
     redirect_to "/home/postshow/#{post.id}"
   end

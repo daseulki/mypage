@@ -1,32 +1,33 @@
 <body >
   <table class = "table">
-    <colgroup>
-      <col style="width:30%" />
-      <col style="width:50%" />
-      <col style="width:20%" />
-
-    </colgroup>
     <thead>
       <tr>
-        <th style="text-align:center" scope="col"> <%= @post.title%> </th>
+        <th style="text-align:center" scope="col"> <%= @post.title%>
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="text-align:center"> <br /><%= @post.content %><br /><br /></td>
+        <td style="text-align:center"> <br /><%= @post.content %><br /><br />
+        </td>
+        <td>
+          <%= @post.user.name%>
+        </td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td style="text-align:right">작성일자: <%= @post.created_at %></td>
+        <td style="text-align:right">
+          작성일자: <%= @post.created_at %>
+        </td>
       </tr>
     </tfoot>
   </table>
   <hr />
-  <p>댓글창</p>
+  <p><h3>댓글창</h3></p>
   <% @post.comments.each do |comment|%>
-    <%=comment.content%>
-  <p ><%=comment.created_at%></p>  <br />
+    <p ><%=comment.content%><br />
+    <%=comment.created_at%></p>  <br />
 
   <%end%>
   <br /><hr />
