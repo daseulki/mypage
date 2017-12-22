@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
   #게시판
   def postall
-        @post = Post.all
+        @post = Post.all.reverse
   end
   #ㄱㅔ시글 쓰기
   def postnew
@@ -48,8 +48,12 @@ class HomeController < ApplicationController
   def update
 
     @post = Post.find(params[:id])
+    @post.title = params[:title]
+    @post.content = params[:content]
+
     @post.save
-    redirect_to '/home/postshow/#{params[:id]}'
+
+    redirect_to "/home/postshow/#{@post.id}"
 
   end
 

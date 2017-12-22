@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'home/edit'
 
-  get 'home/update/:id' => 'home#update'
+  post 'home/update/:id' => 'home#update'
 
   get 'home/destroy/:id' => 'home#destroy'
 
