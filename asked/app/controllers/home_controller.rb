@@ -40,20 +40,30 @@ class HomeController < ApplicationController
     redirect_to "/home/postshow/#{comment.post_id}"
   end
 
-# 내 동영상
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+
+    @post = Post.find(params[:id])
+    @post.save
+    redirect_to '/home/postshow/#{params[:id]}'
+
+  end
+
+  def destroy
+    post = Post.find(params[:id]).destroy
+    redirect_to '/'
+  end
+
+
+
+  # 내 동영상
   def show
   end
 
   def cute
-  end
-
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 end

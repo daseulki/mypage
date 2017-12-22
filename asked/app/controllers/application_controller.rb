@@ -22,5 +22,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def user_authorize
+      unless current_user.id == @post.user_id
+        flash[:alert] = "글주인만 할 수 있어"
+        redirect_to :back
+      end
+    end
+
   helper_method :current_user
 end

@@ -16,9 +16,9 @@ Rails.application.routes.draw do
 
   get 'home/edit'
 
-  get 'home/update'
+  get 'home/update/:id' => 'home#update'
 
-  get 'home/destroy'
+  get 'home/destroy/:id' => 'home#destroy'
 
   get 'user/index'
   get 'user/new'

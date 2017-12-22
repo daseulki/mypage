@@ -37,5 +37,10 @@
     <button type="submit" class="btn btn-primary">뿅!!</button>
   </form>
   <hr />
+  <form action="/home/edit">
+    <input type="hidden" name="id" value="<%=@post.id%>">
+    <input type="submit" value="글 수정하기" />
+  </form>
+
   <h5><a href="/home/postall">게시판으로 돌아가기</a></h5>
 </body>
